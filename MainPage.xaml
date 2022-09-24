@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Task_2.ViewModel"
+             x:DataType="viewmodel:MainViewModel"
+             x:Class="Task_2.MainPage">
+
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="15"
+            Padding="20">
+
+            <Label Text="{Binding LabelText}"
+                   FontSize="20"/>
+            <Entry x:Name="PhoneNumber"
+                   Text="{Binding PhoneNumber}"/>
+            <Button x:Name="ConvertButton"
+                    Text="{Binding ConvertButton}"
+                    Command="{Binding ConvertCommand}"/>
+            <Button x:Name="CallButton"
+                    Text="{Binding CallButton}"
+                    Command="{Binding CallCommand}"
+                    IsEnabled="{Binding IsReady}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
